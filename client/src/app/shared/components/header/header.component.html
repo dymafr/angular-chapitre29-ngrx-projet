@@ -1,5 +1,7 @@
 <mat-toolbar *ngIf="isLoggedin !== null" color="primary">
-  <a routerLink="/">Mon Logo</a>
+  <a routerLink="/">
+    <img src="./assets/logo.png" alt="wonder" />
+  </a>
   <ul *ngIf="!isLoggedin">
     <li class="m-10">
       <a routerLink="connexion">Connexion</a>

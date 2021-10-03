@@ -5,4 +5,12 @@ mat-toolbar {
     display: flex;
     flex-direction: row;
   }
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  img {
+    max-width: 150px;
+  }
 }
