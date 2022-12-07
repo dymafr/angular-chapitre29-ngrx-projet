@@ -15,17 +15,13 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 mongoose.connect(
   'mongodb://localhost:27017/dymajwt?readPreference=primary&appname=MongoDB%20Compass&ssl=false',
-  {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-  },
-  function (error) {
+  (error) => {
     if (error) {
       console.log(error);
     } else {
       console.log('Connexion opened to mongodb!');
     }
-  },
+  }
 );
 
 app.use(routes);

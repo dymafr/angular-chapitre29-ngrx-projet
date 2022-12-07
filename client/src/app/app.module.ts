@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,7 +16,6 @@ import { StoreModule } from '@ngrx/store';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
 import { ROOT_REDUCERS } from './shared/store';
 import { AuthEffects } from './shared/store/auth.effects';
 
@@ -40,7 +39,7 @@ import { AuthEffects } from './shared/store/auth.effects';
     EffectsModule.forRoot([AuthEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
-      logOnly: environment.production,
+      logOnly: !isDevMode(),
     }),
   ],
   providers: [],
